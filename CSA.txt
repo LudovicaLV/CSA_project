@@ -1,0 +1,134 @@
+\begin{center}
+\textbf{CSA analysis: CSV name}
+\end{center}
+
+We analyse the 7-day lagged moving average of the incidence cases and chose day XX of data collection as "day~0".
+
+\begin{center}
+  \begin{Figure}
+    \centering
+    \includegraphics[width=2.3in]{Figures/CSAname_cases.png}
+  \end{Figure}%
+\captionof{figure}{Incidence cases, day 0-30.}
+\end{center}
+
+We performed the fit of the 4 basic parameters (k, C\_init, I\_init, p\_suc) using the WebApp, for 200 times. The errors of the fit result as follows: 
+
+\begin{center}
+  \begin{Figure}
+    \centering
+    \includegraphics[width=2.3in]{Figures/CSAname_error.png}
+  \end{Figure}%
+\captionof{figure}{Error for each procedure}
+\end{center}
+
+Excluding the highest errors (above 20000), we considered the values of the 4 basic parameters and look at their distributions:
+
+\begin{center}
+\begin{minipage}{0.24\linewidth}
+  \begin{Figure}
+    \centering
+    \includegraphics[width=1.6in]{Figures/CSAname_k.png}
+  \end{Figure}%
+\end{minipage}
+\begin{minipage}{0.24\linewidth}
+  \begin{Figure}
+    \centering
+    \includegraphics[width=1.6in]{Figures/CSAname_i.png}
+  \end{Figure}%
+\end{minipage}
+\begin{minipage}{0.24\linewidth}
+  \begin{Figure}
+    \centering
+    \includegraphics[width=1.6in]{Figures/CSAname_c.png}
+  \end{Figure}%
+\end{minipage}
+\begin{minipage}{0.24\linewidth}
+  \begin{Figure}
+    \centering
+    \includegraphics[width=1.6in]{Figures/CSAname_p.png}
+  \end{Figure}%
+\end{minipage}
+\captionof{figure}{Distribution of 4 basic parameters (selected 4-tuple in red)}
+\end{center}
+
+
+We fix the 4 basic parameters which gave the least error.
+
+\begin{center}
+  \begin{Figure}
+    \centering
+    \includegraphics[width=2.3in]{Figures/Phase_1_Repeat_Ind_CSAname.png}
+  \end{Figure}%
+\captionof{figure}{Screenshot of the WebApp for the best fit.}
+\end{center}
+
+and we then move on to fit the 4 parameters of social distancing driver:
+
+\begin{center}
+  \begin{Figure}
+    \centering
+    \includegraphics[width=2.3in]{Figures/CSAname_error_2.png}
+  \end{Figure}%
+\captionof{figure}{Error of phase 2 fit}
+\end{center}
+
+
+\begin{center}
+\begin{minipage}{0.24\linewidth}
+  \begin{Figure}
+    \centering
+    \includegraphics[width=1.6in]{Figures/CSAname_son.png}
+  \end{Figure}%
+\end{minipage}
+\begin{minipage}{0.24\linewidth}
+  \begin{Figure}
+    \centering
+    \includegraphics[width=1.6in]{Figures/CSAname_sin.png}
+  \end{Figure}%
+\end{minipage}
+\begin{minipage}{0.24\linewidth}
+  \begin{Figure}
+    \centering
+    \includegraphics[width=1.6in]{Figures/CSAname_sfn.png}
+  \end{Figure}%
+\end{minipage}
+\begin{minipage}{0.24\linewidth}
+  \begin{Figure}
+    \centering
+    \includegraphics[width=1.6in]{Figures/CSAname_ssw.png}
+  \end{Figure}%
+\end{minipage}
+\captionof{figure}{Distribution of parameters of social distancing driver (selected 4-tuple in red)}
+\end{center}
+
+\begin{center}
+  \begin{Figure}
+    \centering
+    \includegraphics[width=2.3in]{Figures/Phase_2_Repeat_Ind2_CSAname.png}
+  \end{Figure}%
+\captionof{figure}{Screenshot of the WebApp for the best fit.}
+\end{center}
+  
+\begin{center}
+  \begin{Figure}
+    \centering
+    \includegraphics[width=2.3in]{Figures/CSAname_s.png}
+  \end{Figure}%
+\captionof{figure}{Proportion of Sr over the sum of S and Sr.}
+\end{center}
+
+\begin{center}
+\textbf{Parameters:}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c| } 
+ \hline
+k & c & i & p \\ \hline
+ &  &  & \\ \hline \hline
+socDist\_on & socDist\_in & socDist\_fnl & socDist\_switch \\ \hline
+ &	 &	 &	\\ \hline
+ \hline
+\end{tabular}
+\end{center}
