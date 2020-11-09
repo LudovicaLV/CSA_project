@@ -1,7 +1,7 @@
 #note that main_folder, filename, fold and datetime need to be changed 
 
 #set the folder which contains the code and the CSV files as directory 
-main_folder <- ".../Python_CSA_project/"
+main_folder <- "..."
 setwd(main_folder)
 
 #from Python_CSA_project folder (Detroit as an example)
