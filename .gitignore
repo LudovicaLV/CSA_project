@@ -1,0 +1,15 @@
+*.ipynb_checkpoints*
+
+.idea/
+
+*.DS_Store*
+
+*.vscode*
+
+*__pycache__*
+
+*CSA_120_days*
+
+*Output*
+
+*gecko*
