@@ -18,9 +18,7 @@ Getz-Hubbard
 
 Example command to run the code:
 ```
-python AutoNMB.py --input_file ./CSA_120_days/Indianapolis_Carmel_Muncie,\ IN_day47.csv
-```
-!!!!NOTE!!!!
-You need to put `\` before the space charactors. (this way of filenaming should be changed in the future to avoid this kind of issue.)
+python AutoNMB.py --input_file ./CSA_120_days/Indianapolis_Carmel_Muncie,IN_day47.csv
+``
 
 For additional information on procedure and analysis, please read the [project guide](https://docs.google.com/document/d/1GF44ZtaOd41afMRhhlmjqKYxbi8JGJxU_kbhxQylSiM/edit?usp=sharing).
