@@ -6,7 +6,7 @@ This folder provides all the necessary code to run the automatic fits and the an
 Once the data are downloaded, please unzip the data, add the folder to the Getz-Hubbard folder and make sure all the data are put into folder `CSA_120_days` such as:
 
 ```
-Getz-Hubbard
+Python_CSA_project
     |--CSA_120_days
         |--xx.csv
         |--xx.csv
