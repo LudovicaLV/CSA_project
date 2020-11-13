@@ -57,7 +57,7 @@ class CSA:
         profile = webdriver.FirefoxProfile()
         profile.set_preference('browser.download.folderList', 2)
         profile.set_preference('browser.download.manager.showWhenStarting', False)
-        profile.set_preference('browser.download.dir',self.vtables_folder)
+        profile.set_preference('browser.download.dir', self.vtables_folder)
         profile.set_preference('browser.helperApps.neverAsk.saveToDisk', 'text/csv')
         
         self.wd = webdriver.Firefox(firefox_profile=profile)
@@ -251,7 +251,7 @@ class CSA:
                          .until(EC.presence_of_element_located((By.ID, 'Incidence_Covid19DiscStoc_1'))))
         self.wd.execute_script('arguments[0].scrollIntoView();', fit_plot_span)
         time.sleep(0.2)
-        self.wd.save_screenshot(self.plots_folder + 'Phase_{}_Repeat_{}.png'.format(self.phase,self.repeat))
+        self.wd.save_screenshot(os.path.join(self.plots_folder, 'Phase_{}_Repeat_{}.png'.format(self.phase,self.repeat)))
         print('Screenshot save')
         
         self.wd.switch_to.default_content()
@@ -293,7 +293,7 @@ class CSA:
                 self.wd.execute_script('arguments[0].setAttribute("class", "switch")', swc);
                     
     def run(self):
-        self.output_file = open(self.output_folder + 'results_log.csv', 'w')
+        self.output_file = open(os.path.join(self.output_folder + 'results_log.csv'), 'w')
         self.output_file.write('Run,Phase,Error,{}'.format(','.join([p for p in BOUNDS])))
         self.output_file.write(',{},{}'.format(','.join(['Sim day {}'.format(i,) for i in range(PHASE_DAYS[-1] + 1)]),
                                                ','.join(['Data day {}'.format(i,) for i in range(PHASE_DAYS[-1] + 1)])))
