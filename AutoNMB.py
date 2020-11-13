@@ -293,7 +293,7 @@ class CSA:
                 self.wd.execute_script('arguments[0].setAttribute("class", "switch")', swc);
                     
     def run(self):
-        self.output_file = open(os.path.join(self.output_folder + 'results_log.csv'), 'w')
+        self.output_file = open(os.path.join(self.output_folder, 'results_log.csv'), 'w')
         self.output_file.write('Run,Phase,Error,{}'.format(','.join([p for p in BOUNDS])))
         self.output_file.write(',{},{}'.format(','.join(['Sim day {}'.format(i,) for i in range(PHASE_DAYS[-1] + 1)]),
                                                ','.join(['Data day {}'.format(i,) for i in range(PHASE_DAYS[-1] + 1)])))
