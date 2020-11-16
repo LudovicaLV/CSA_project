@@ -16,7 +16,7 @@ Python_CSA_project
             .
 ```
 
-Open the terminal and run the following command to run the code. Please change the name of the CSV file according to your CSAs:
+Open the terminal, navigate to the Python_CSA_project folder (using “cd” command) and run the following command to run the code. Please change the name of the CSV file according to your CSAs:
 ```
 python AutoNMB.py --input_file ./CSA_120_days/Indianapolis_Carmel_Muncie_IN_day47.csv
 ```
