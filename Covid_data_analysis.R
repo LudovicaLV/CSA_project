@@ -122,7 +122,6 @@ points(sd_sw[ind2], rep(0, length(ind2)), col = "red", pch = 19, cex = 2)
 #evaluate mean and sd of SR/(S + SR), 
 #considering the best 20 fits (lowest 20 errors)
 total_s <- list()
-total_s[[1]] <- ss
 n <- 1
 ndx <- order(error_2)[1:20]
 for (j in ndx){
