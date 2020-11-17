@@ -119,15 +119,6 @@ hist(sd_sw[ind_e], xlab = "Value", main = "SocDist_switch", breaks = 10)
 points(sd_sw[ind2], rep(0, length(ind2)), col = "red", pch = 19, cex = 2)
 #name: CSAname_ssw
 
-#select values of class S and SR corresponding to best fit
-s <- data_phase_2[[ind2]]$S1
-sr <- data_phase_2[[ind2]]$SR7
-
-#plot SR/(S + SR)
-ss <- sr/(s+sr)
-plot(ss, type = "l", xlab = "Day", ylab = "Sr/(S+Sr)", main = fold, ylim = c(0,1))
-#name: CSAname_s
-
 #evaluate mean and sd of SR/(S + SR), 
 #considering the best 20 fits (lowest 20 errors)
 total_s <- list()
@@ -158,7 +149,7 @@ for (k in 1:length(total_s[[1]])){
 plot(m_tot, type = "l", xlab = "Day", ylab = "Sr/(S+Sr)", main = fold)
 points(m_tot + sd_tot, type = "l", col = "blue")
 points(m_tot - sd_tot, type = "l", col = "blue")
-#name: CSAname_ss
+#name: CSAname_s
 
 #indices of best fit for phase 1 (ind) and phase 2 (ind2)
 #(used to choose screenshot for analysis report)
