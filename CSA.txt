@@ -113,7 +113,7 @@ and we then move on to fit the 4 parameters of social distancing driver:
     \centering
     \includegraphics[width=2.3in]{Figures/CSAname_s.png}
   \end{Figure}%
-\captionof{figure}{Proportion of Sr over the sum of S and Sr.}
+\captionof{figure}{Proportion of Sr over the sum of S and Sr (20 best fits).}
 \end{center}
 
 \begin{center}
