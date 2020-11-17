@@ -123,8 +123,8 @@ points(sd_sw[ind2], rep(0, length(ind2)), col = "red", pch = 19, cex = 2)
 #considering the best 20 fits (lowest 20 errors)
 total_s <- list()
 total_s[[1]] <- ss
-n <- 2
-ndx <- order(error_2)[2:20]
+n <- 1
+ndx <- order(error_2)[1:20]
 for (j in ndx){
   s <- data_phase_2[[j]]$S1
   sr <- data_phase_2[[j]]$SR7
