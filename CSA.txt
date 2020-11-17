@@ -1,6 +1,4 @@
-\begin{center}
-\textbf{CSA analysis: CSV name}
-\end{center}
+\section{CSA analysis: CSV name}
 
 We analyse the 7-day lagged moving average of the incidence cases and chose day XX of data collection as "day~0".
 
