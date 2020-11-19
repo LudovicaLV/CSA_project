@@ -127,6 +127,5 @@ k & c & i & p \\ \hline
  &  &  & \\ \hline \hline
 socDist\_on & socDist\_in & socDist\_fnl & socDist\_switch \\ \hline
  &	 &	 &	\\ \hline
- \hline
 \end{tabular}
 \end{center}
