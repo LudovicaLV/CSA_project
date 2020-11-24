@@ -1,26 +1,26 @@
-#note that main_folder, filename, fold and datetime need to be changed 
+#note that main_folder, filename, fold and datetime need to be changed
 
 #set the folder which contains the code and the CSV files as directory 
-main_folder <- ".../Python_CSA_project/"
+main_folder <- "/mnt/d/repos/Getz-Hubbard/"
 setwd(main_folder)
 
 #from Python_CSA_project folder (Detroit as an example)
-file_name <- "Detroit_Warren_Ann Arbor, MI_day50.csv"
+file_name <- "Indianapolis_Carmel_Muncie_IN_day47.csv"
 
 #from Output folder (Detroit as an example)
-fold <- "Detroit"
-datetime <- "20201023103844"
+fold <- "Indianapolis"
+datetime <- "20201123003138"
 
 #set the working directory to the output folder DateTime
 setwd(paste(main_folder, "Output/", fold, "/", datetime, sep = ""))
 
 #plot the incidence data: day 0-30
-inc_data <- read.csv(paste(main_folder, "/CSA_120_days/", file_name, sep = ""), header = FALSE)
+inc_data <- read.csv(paste(main_folder, "CSA_120_days/", file_name, sep = ""), header = FALSE)
 rt <-  data.frame(t(inc_data))
 v <- rt$X1
 
 #name: CSAname_cases
-png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_cases", sep = ""), width=6, height=5, units="in", res=100)
+png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_cases.png", sep = ""), width=6, height=5, units="in", res=100)
 plot(c(0:30), v[1:31], type = "l", xlab = "Day (data collection)", ylab = "Moving average (inc. cases)")
 dev.off()
 
@@ -53,7 +53,7 @@ for (j in 1:200){
 #plot error and threshold (20000)
 
 #name: CSAname_error
-png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_error", sep = ""), width=6, height=5, units="in", res=100)
+png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_error.png", sep = ""), width=6, height=5, units="in", res=100)
 plot(error)
 abline (h = 20000, lty = 2)
 dev.off()
@@ -66,25 +66,25 @@ ind <- which(error == min(error))
 #with selected 4-tuple in red (minimum error)
 
 #name: CSAname_k
-png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_k", sep = ""), width=6, height=5, units="in", res=100)
+png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_k.png", sep = ""), width=6, height=5, units="in", res=100)
 hist(k[ind_e], xlab = "Value", main = "kappa", breaks = 10)
 points(k[ind], 0, col = "red", pch = 19, cex = 2)
 dev.off()
 
 #name: CSAname_c
-png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_c", sep = ""), width=6, height=5, units="in", res=100)
+png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_c.png", sep = ""), width=6, height=5, units="in", res=100)
 hist(c[ind_e], xlab = "Value", main = "C_init", breaks = 10)
 points(c[ind], 0, col = "red", pch = 19, cex = 2)
 dev.off()
 
 #name: CSAname_i
-png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_i", sep = ""), width=6, height=5, units="in", res=100)
+png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_i.png", sep = ""), width=6, height=5, units="in", res=100)
 hist(i[ind_e], xlab = "Value", main = "I_init", breaks = 10)
 points(i[ind], 0, col = "red", pch = 19, cex = 2)
 dev.off()
 
 #name: CSAname_p
-png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_p", sep = ""), width=6, height=5, units="in", res=100)
+png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_p.png", sep = ""), width=6, height=5, units="in", res=100)
 hist(p[ind_e], xlab = "Value", main = "p_suc", breaks = 10)
 points(p[ind], 0, col = "red", pch = 19, cex = 2)
 dev.off()
@@ -115,7 +115,7 @@ for (j in 1:200){
 
 #plot error and threshold (20000)
 #name: CSAname_error_2
-png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_error_2", sep = ""), width=6, height=5, units="in", res=100)
+png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_error_2.png", sep = ""), width=6, height=5, units="in", res=100)
 plot(error_2, ylab = "error")
 abline (h = 20000, lty = 2)
 dev.off()
@@ -127,25 +127,25 @@ ind2 <- which(error_2 == min(error_2))
 #distribution of social distancing parameters (for error below threshold)
 #with selected 4-tuple in red (minimum error)
 #name: CSAname_son
-png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_son", sep = ""), width=6, height=5, units="in", res=100)
+png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_son.png", sep = ""), width=6, height=5, units="in", res=100)
 hist(sd_on[ind_e], xlab = "Value", main = "SocDist_on", breaks = 10)
 points(sd_on[ind2], rep(0, length(ind2)), col = "red", pch = 19, cex = 2)
 dev.off()
 
 #name: CSAname_sin
-png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_sin", sep = ""), width=6, height=5, units="in", res=100)
+png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_sin.png", sep = ""), width=6, height=5, units="in", res=100)
 hist(sd_in[ind_e], xlab = "Value", main = "SocDist_init", breaks = 10)
 points(sd_in[ind2], rep(0, length(ind2)), col = "red", pch = 19, cex = 2)
 dev.off()
 
 #name: CSAname_sfn
-png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_sfn", sep = ""), width=6, height=5, units="in", res=100)
+png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_sfn.png", sep = ""), width=6, height=5, units="in", res=100)
 hist(sd_fn[ind_e], xlab = "Value", main = "SocDist_fnl", breaks = 10)
 points(sd_fn[ind2], rep(0, length(ind2)), col = "red", pch = 19, cex = 2)
 dev.off()
 
 #name: CSAname_ssw
-png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_ssw", sep = ""), width=6, height=5, units="in", res=100)
+png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_ssw.png", sep = ""), width=6, height=5, units="in", res=100)
 hist(sd_sw[ind_e], xlab = "Value", main = "SocDist_switch", breaks = 10)
 points(sd_sw[ind2], rep(0, length(ind2)), col = "red", pch = 19, cex = 2)
 dev.off()
@@ -177,7 +177,7 @@ for (k in 1:length(total_s[[1]])){
 
 #plot mean ± sd for SR/(S + SR)
 #name: CSAname_s
-png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_s", sep = ""), width=6, height=5, units="in", res=100)
+png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_s.png", sep = ""), width=6, height=5, units="in", res=100)
 plot(m_tot, type = "l", xlab = "Day", ylab = "Sr/(S+Sr)", main = fold)
 points(m_tot + sd_tot, type = "l", col = "blue")
 points(m_tot - sd_tot, type = "l", col = "blue")
