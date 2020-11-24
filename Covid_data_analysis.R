@@ -5,11 +5,11 @@ main_folder <- "/mnt/d/repos/Getz-Hubbard/"
 setwd(main_folder)
 
 #from Python_CSA_project folder (Detroit as an example)
-file_name <- "Indianapolis_Carmel_Muncie_IN_day47.csv"
+file_name <- "Lafayette__Opelousas__Morgan_City_LA_day52.csv"
 
 #from Output folder (Detroit as an example)
-fold <- "Indianapolis"
-datetime <- "20201123003138"
+fold <- "Lafayette"
+datetime <- "20201123003257"
 
 #set the working directory to the output folder DateTime
 setwd(paste(main_folder, "Output/", fold, "/", datetime, sep = ""))
@@ -42,7 +42,7 @@ c <- vector()
 i <- vector()
 p <- vector()
 for (j in 1:200){
-  d <- data_phase_1[[j]] 
+  d <- data_phase_1[[j]]
   error <- c(error, d$ErrorFit[15])
   k <- c(k, params$kappa[j])
   c <- c(c, params$C_0[j])
@@ -54,7 +54,7 @@ for (j in 1:200){
 
 #name: CSAname_error
 png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_error.png", sep = ""), width=6, height=5, units="in", res=100)
-plot(error)
+plot(error[error < 10000])
 abline (h = 20000, lty = 2)
 dev.off()
 
@@ -190,4 +190,10 @@ print(ind2)
 print(paste("Add screenshot: Phase_1_Repeat_", ind, sep = ""))
 print(paste("Add screenshot: Phase_2_Repeat_", ind2, sep = ""))
 print("Please rename the screenshot adding _CSAname at the end, to distinguish among CSAs in Overleaf")
+
+
+
+
+
+
 
