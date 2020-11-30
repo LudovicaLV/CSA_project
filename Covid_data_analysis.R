@@ -4,10 +4,10 @@
 main_folder <- "/mnt/d/repos/Getz-Hubbard/"
 setwd(main_folder)
 
-#from Python_CSA_project folder (Detroit as an example)
+#from Python_CSA_project folder (as an example)
 file_name <- "Lafayette__Opelousas__Morgan_City_LA_day52.csv"
 
-#from Output folder (Detroit as an example)
+#from Output folder (as an example)
 fold <- "Lafayette"
 datetime <- "20201123003257"
 
