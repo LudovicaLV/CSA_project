@@ -54,7 +54,7 @@ for (j in 1:200){
 
 #name: CSAname_error
 png(file=paste(main_folder, "Output/", fold, "/", datetime, "/", fold, "_error.png", sep = ""), width=6, height=5, units="in", res=100)
-plot(error[error < 10000])
+plot(error)
 abline (h = 20000, lty = 2)
 dev.off()
 
