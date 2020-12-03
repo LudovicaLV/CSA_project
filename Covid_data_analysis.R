@@ -5,7 +5,7 @@ main_folder <- ".../Python_CSA_project/"
 setwd(main_folder)
 
 #from Python_CSA_project folder (Detroit as an example)
-file_name <- "Detroit_Warren_Ann Arbor, MI_day50.csv"
+file_name <- "Detroit__Warren__Ann_Arbor_MI_day50.csv"
 
 #from Output folder (Detroit as an example)
 fold <- "Detroit"
