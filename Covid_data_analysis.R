@@ -1,21 +1,21 @@
-#note that main_folder, filename, fold and datetime need to be changed
+#note that main_folder, filename, fold and datetime need to be changed 
 
 #set the folder which contains the code and the CSV files as directory 
-main_folder <- "/mnt/d/repos/Getz-Hubbard/"
+main_folder <- ".../Python_CSA_project/"
 setwd(main_folder)
 
-#from Python_CSA_project folder (as an example)
-file_name <- "Lafayette__Opelousas__Morgan_City_LA_day52.csv"
+#from Python_CSA_project folder (Detroit as an example)
+file_name <- "Detroit_Warren_Ann Arbor, MI_day50.csv"
 
-#from Output folder (as an example)
-fold <- "Lafayette"
-datetime <- "20201123003257"
+#from Output folder (Detroit as an example)
+fold <- "Detroit"
+datetime <- "20201023103844"
 
 #set the working directory to the output folder DateTime
 setwd(paste(main_folder, "Output/", fold, "/", datetime, sep = ""))
 
 #plot the incidence data: day 0-30
-inc_data <- read.csv(paste(main_folder, "CSA_120_days/", file_name, sep = ""), header = FALSE)
+inc_data <- read.csv(paste(main_folder, "/CSA_120_days/", file_name, sep = ""), header = FALSE)
 rt <-  data.frame(t(inc_data))
 v <- rt$X1
 
@@ -42,7 +42,7 @@ c <- vector()
 i <- vector()
 p <- vector()
 for (j in 1:200){
-  d <- data_phase_1[[j]]
+  d <- data_phase_1[[j]] 
   error <- c(error, d$ErrorFit[15])
   k <- c(k, params$kappa[j])
   c <- c(c, params$C_0[j])
@@ -191,9 +191,7 @@ print(paste("Add screenshot: Phase_1_Repeat_", ind, sep = ""))
 print(paste("Add screenshot: Phase_2_Repeat_", ind2, sep = ""))
 print("Please rename the screenshot adding _CSAname at the end, to distinguish among CSAs in Overleaf")
 
-
-
-
-
-
-
+#saving data to file
+df_final <- data.frame(mean = m_tot, sd = sd_tot)
+saveRDS(df_final, file = paste("data_", fold, ".rds", sep = ""))
+write.csv(df_final,paste("data_", fold, ".csv", sep = ""))
