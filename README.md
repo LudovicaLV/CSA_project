@@ -1,5 +1,4 @@
-# Getz-Hubbard group
-CSA project 
+# A comparison of COVID-19 outbreaks across US Combined Statistical Areas using new methods for estimating R_0 and social distancing
 
 This folder provides all the necessary code to run the automatic fits and the analysis. Please download and unzip this folder. In addition, download the data (CSV file with incidence and mortality data) from this [Dropbox folder](https://www.dropbox.com/sh/jous6hx5t72vjff/AABnFV_nUDt5vt0-NVZUqMENa?dl=1).
 
