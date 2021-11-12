@@ -20,4 +20,4 @@ Open the terminal, navigate to the Python_CSA_project folder (using “cd” com
 python AutoNMB.py --input_file ./CSA_120_days/Indianapolis_Carmel_Muncie_IN_day47.csv
 ```
 
-For additional information on procedure and analysis, please read the [project guide](https://docs.google.com/document/d/1GF44ZtaOd41afMRhhlmjqKYxbi8JGJxU_kbhxQylSiM/edit?usp=sharing).
+For additional information on procedure and analysis, please read the [project guide](https://ludovicalv.github.io/PDFs/SOF2_CSA.pdf).
